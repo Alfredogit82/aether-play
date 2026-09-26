@@ -83,8 +83,10 @@
         script.onload = function () {
           createUnityInstance(canvas, config, function (progress) {
             document.querySelector("#aether-loading-bar").style.width = 100 * progress + "%";
-          }).then(function () {
+          }).then(function (unityInstance) {
             document.querySelector("#aether-loading").style.display = "none";
+            // Carregamento para a medição do item 08b: da abertura da página até aqui. O jogo só mostra com ?medir=1.
+            unityInstance.SendMessage("Medicao", "LoadSeconds", performance.now() / 1000);
           }).catch(function (message) {
             alert(message);
           });
