@@ -19,8 +19,6 @@
       #aether-loading-bar { width: 0%; height: 100%; background: #fff; }
       #unity-warning { position: fixed; left: 50%; top: 5%; transform: translateX(-50%); display: none; }
       .aether-cover { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; padding: 24px; background: #000; font-size: 20px; z-index: 10; }
-      /* Web não trava a orientação: em paisagem, o overlay cobre a tela (JOGO-0 §2) */
-      @media (orientation: landscape) { .aether-mobile #aether-rotate { display: flex; } }
       .aether-desktop #aether-desktop { display: flex; }
     </style>
   </head>
@@ -28,7 +26,6 @@
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <div id="aether-loading"><div id="aether-loading-bar"></div></div>
     <div id="unity-warning"></div>
-    <div id="aether-rotate" class="aether-cover">Gire o celular</div>
     <div id="aether-desktop" class="aether-cover">Este protótipo é de celular.</div>
     <script>
       // Desktop = sem tela de toque como entrada principal. Lá o jogo nem carrega (JOGO-0 §2).
